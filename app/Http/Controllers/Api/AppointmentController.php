@@ -58,7 +58,6 @@ class AppointmentController extends Controller
         }
 
         return DB::transaction(function () use ($data, $start, $availability) {
-            // Lock the service row so concurrent bookings for it are processed one at a time
             $service = Service::where('is_active', true)
                 ->lockForUpdate()
                 ->find($data['service_id']);

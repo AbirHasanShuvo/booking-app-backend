@@ -31,4 +31,4 @@ Route::middleware('auth:api')->group(function () {
     Route::post('appointments', [AppointmentController::class, 'store']);
     Route::get('appointments/{id}', [AppointmentController::class, 'show']);
     Route::patch('appointments/{id}/cancel', [AppointmentController::class, 'cancel']);
-});
+}); 
